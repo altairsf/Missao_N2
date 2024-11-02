@@ -1,0 +1,67 @@
+{
+    "receitas": {
+        "receita" : [
+            {
+            "title": "Arroz com brócolis e linguiça",
+            "image": "R1 Image.png",
+            "instructions": "Em uma frigideira, coloque um fio de azeite e refogue a cebola e o alho. Acrescente o brócolis e tempere com pimenta-do-reino e caldo de legumes. Junte o arroz cozido e a linguiça de frango. Misture tudo e salpique o alho frito.",
+            "ingredients": [
+                {
+                    "item": "Arroz"
+                },
+                {
+                    "item": "Brócolis"
+                },
+                {
+                    "item": "Linguiça de frango"
+                },
+                {
+                    "item": "Tempero a gosto"
+                }
+            ]
+            },
+            {
+                "title": "Bolo de Café",
+                "image": "R2 Image.png",
+                "instructions": "Bata no liquidificador os ovos, o óleo e o açucar. Acrescente aos poucos a farinha e o café coado. Por fim, misture o fermento. Asse em uma forma untada por 30 minutos",
+                "ingredients": [
+                    {
+                        "item": "3 ovos"
+                    },
+                    {
+                        "item": "2 xícaras de açucar"
+                    },
+                    {
+                        "item": "3 xícaras de farinha de trigo"
+                    },
+                    {
+                        "item": "1 xícara de café coado"
+                    },
+                    {
+                        "item": "2 xícaras de óleo e uma colher de fermento"
+                    }
+                ]
+            },
+            {
+                "title": "Pudim de leite condensado",
+                "image": "R3 Image.png",
+                "instructions": "Bata no liquidificador os ovos, o leite e o leite condensado. Em outra panela, derreta o açucar até ficar caramelado e acrescente uma xícara de água até engrossar. Coloque em uma forma redonda e despeje a massa de pudim por cima. Asse por 45 minutos.",
+                "ingredients": [
+                    {
+                        "item": "3 ovos"
+                    },
+                    {
+                        "item": "1 lata de leite condensado"
+                    },
+                    {
+                        "item": "1 lata (mesma do leite condensado) de leite"
+                    },
+                    {
+                        "item": "1 xícara de açucar para a calda"
+                    }
+                ]
+            }
+        ]
+    }
+}
+

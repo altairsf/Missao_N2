@@ -2,8 +2,13 @@ const swap=(lista,pos) => {
     
 }
 
-const shuffle=(lista,QtTr) =>{
-
+const shuffle=() =>{
+    for(let i = lista.length -1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = lista[i];
+        lista[i] = lista[j];
+        lista[j] = temp;
+    }
 }
 
 const bubble_sort = (v) =>{

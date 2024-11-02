@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Receitas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="container-fluid bg-warning" onload="preencheCatalogo()">
+    <h1>Catálogo de Receitas</h1>
+    <div class="d-flex justify-content-center flex-wrap" id="pnlCatalogo">
+    </div>
+
+    <script type="text/javascript">
+        function getListaIngredientes(r, IngLis) {
+            let itens = "";
+            fetch("receitas.json")
+                .then(response => response.json())
+                .then(data => {
+                    data.receitas.receita[r].ingredients.map(it => {
+                        itens += `<li>${it.item}</li>`;
+                    });
+                    document.getElementById(IngLis).innerHTML = itens;
+                });
+        }
+
+        function getCard() {
+            const container = document.getElementById("pnlCatalogo");
+            fetch("receitas.json")
+                .then(response => response.json())
+                .then(data => {
+                    data.receitas.receita.forEach((lis, r) => {
+                        const card = document.createElement("div");
+                        card.classList.add("card", "m-3");
+                        card.style.width = "250px";
+
+                        const img = document.createElement("img");
+                        img.src = lis.image;
+                        img.alt = lis.title;
+                        img.classList.add("card-img-top");
+                        img.style.height = "180px"
+
+                        const cardBody = document.createElement("div");
+                        cardBody.classList.add("card-body");
+
+                        const titulo = document.createElement("h6");
+                        titulo.textContent = lis.title;
+                        titulo.classList.add("card-title", "text-center");
+                        cardBody.appendChild(titulo);
+
+                        const cardText = document.createElement("div");
+                        cardText.classList.add("card-text");
+
+                        const Ingredientes = document.createElement("ul");
+                        Ingredientes.id = `IngUL${r}`;
+                        getListaIngredientes(r, Ingredientes.id);
+                        cardText.appendChild(Ingredientes);
+
+                        const HR = document.createElement("hr");
+                        cardText.appendChild(HR);
+
+                        const preparo = document.createElement("p");
+                        preparo.textContent = lis.instructions;
+                        cardText.appendChild(preparo);
+
+                        card.appendChild(img);
+                        card.appendChild(cardBody);
+                        cardBody.appendChild(cardText);
+                        container.appendChild(card);
+                    });
+                });
+        }
+
+        function preencheCatalogo() {
+            getCard();
+        }
+    </script>
+</body>
+</html>
+</body>

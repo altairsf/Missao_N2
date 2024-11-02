@@ -49,11 +49,20 @@
                 if(func == 2){
                     quick_sort(lista, 0, lista.length -1)
                 }
-                //SortVal.innerHTML = "";
                 for(let x of lista){
                     const node1 = document.createElement("li");
                     node1.appendChild(document.createTextNode(x));
                     SortVal.appendChild(node1);
+                }
+            document.getElementById("valores").innerHTML = SortVal.innerHTML;
+            SortVal.innerHTML = "";
+            }
+            const misturar = () =>{
+                shuffle(lista);
+                for(let x of lista){
+                    const node2 = document.createElement("li");
+                    node2.appendChild(document.createTextNode(x));
+                    SortVal.appendChild(node2);
                 }
             document.getElementById("valores").innerHTML = SortVal.innerHTML;
             SortVal.innerHTML = "";
